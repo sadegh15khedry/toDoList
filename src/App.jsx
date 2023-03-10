@@ -3,46 +3,33 @@ import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import MyHeader from'./MyHeader';
-
-function NavbarItem(props){
-  
-    return (
-       <li className='nav-item'>
-        <a className='nav-link' href="#">
-          {props.text}
-        </a>
-       </li>
-    );
-  
-}
-
-function VerticalNavbar(){
- 
-  const items = ["Home", "Exit"]
-
-
-    return (
-      <nav class="navbar navbar-expand-sm bg-light">
-
-        <div class="container-fluid">
-          <ul className='navbar-nav'>
-          {
-            items.map((item) => <NavbarItem text={item} /> )
-          }
-
-          </ul>
-        </div>
-       </nav>
-    );
-  
-} 
+import HorizontalNavbar from "./HorizontalNavbar"
+import VerticalNavbar from "./VerticalNavbar"
 
 function App() {
 
   return (
-    <div className="App">
-        <MyHeader />
-       <VerticalNavbar  />
+    <div className="Container-fluid">
+      <div className='row'>
+        <div className='col-sm-12'>
+          <MyHeader />
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-sm-12'>
+          <HorizontalNavbar  />
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-sm-2'>
+          <VerticalNavbar />
+        </div>
+        <div className='col-sm-10'>
+          
+        </div>
+      </div>
+      
+      
     </div>
   );
 }
