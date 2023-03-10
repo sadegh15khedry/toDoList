@@ -2,56 +2,47 @@
 import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import MyHeader from'./MyHeader';
 
-function shoot(){
-  alert("shoot");
-}
-class MyHeader extends React.Component{
-  render(){
-    return(
-    <img src="images/header.jpg" alt='header image' id="header" onClick={shoot}/>
-    )
-  }
-}
-
-class CartItem extends React.Component{
+function NavbarItem(props){
   
-  render(){
-    return(
-      <h3>
-        this is a CartItem
-      </h3>
-    )
-  }
-}
-
-class Cart extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      Id : 1,
-      sumtotal: "0",
-      date : "1401/12/16"
-    }
-  }
-
-  render(){
-    return(
-    <h2>
-      this is a cart and total is  { this.state.sumtotal }
-    </h2>
+    return (
+       <li className='nav-item'>
+        <a className='nav-link' href="#">
+          {props.text}
+        </a>
+       </li>
     );
-  }
+  
 }
 
+function VerticalNavbar(){
+ 
+  const items = ["Home", "Exit"]
 
+
+    return (
+      <nav class="navbar navbar-expand-sm bg-light">
+
+        <div class="container-fluid">
+          <ul className='navbar-nav'>
+          {
+            items.map((item) => <NavbarItem text={item} /> )
+          }
+
+          </ul>
+        </div>
+       </nav>
+    );
+  
+} 
 
 function App() {
 
   return (
     <div className="App">
         <MyHeader />
-        <Cart />
+       <VerticalNavbar  />
     </div>
   );
 }
