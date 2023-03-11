@@ -26,7 +26,7 @@ export default function VerticalNavbar(){
     return (
 
 
-          <ul className='nav flex-column'>
+          <ul id='' className='nav flex-column'>
           {
             items.map((item) => <VerticalNavbarItem text={item} /> )
           }

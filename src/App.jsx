@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import MyHeader from'./MyHeader';
 import HorizontalNavbar from "./HorizontalNavbar"
 import VerticalNavbar from "./VerticalNavbar"
+import Section from "./Section"
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
           <VerticalNavbar />
         </div>
         <div className='col-sm-10'>
-          
+          <Section />
         </div>
       </div>
       
